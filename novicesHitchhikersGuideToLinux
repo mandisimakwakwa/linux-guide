@@ -1,0 +1,44 @@
+Welcome to Novices HitchHickers Guide to Linux
+
+The Following will comprise of tips, tricks, tutorials, manuals and so much more.
+
+[Tutorial 1: Arch Linux Automount]
+
+	Step 1:
+		->sudo blkid
+	Step 2: 
+		->Find UUID of the drive you wish to automount.
+			eg. my drive is /dev/sda1
+			eg. UUID="3DI AD4"
+			eg. my type is type=ext4
+
+		*If you want to see the drive sizes just to confirm the previous commands output.
+		->lsblk
+
+	Step 3:
+		->sudo insert_text_editor /etc/fstab
+	Step 4:
+		->UUID="id_of_drive" /media/mount_point ext4 defaults,noatime 0 2
+			#Enter the following on a new line at the end of the file with your details of course
+		
+`		*IF your want to automount an ntfs drive first install ntfs-3g then enter the following on a new line at the end of the /etc/fstab file.
+		->UUID="id_of_drive" /media/mount_point ntfs-3g defaults,noatime 0 2
+
+[Tutorial 1: Complete]
+
+=======================================================================================================================================================
+
+[Tutorial 2: Unset Terminal Software Proxies]
+
+	#Unset proxy for OS terminal
+	Step 1:
+		unset HTTP_PROXY
+	Step 2: 
+		unset http_proxy
+
+	#Unset proxy for irb console
+	Step 1: 
+		ENV['HTTP_PROXY'] = ENV['http_proxy'] = nil
+[Tutorial 2: Complete]
+
+=======================================================================================================================================================
